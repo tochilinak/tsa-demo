@@ -32,6 +32,8 @@ global int ctx_nonce;
 
     slice sender_address = cs~load_msg_addr();
 
+    load_data();
+
     int op = in_msg_body~load_uint(32);
     
     if (op == op::withdraw) {
