@@ -34,7 +34,7 @@ fun onInternalMessage(myBalance: int, msgValue: int, inMsgFull: cell, inMsgBody:
     val op: int = inMsgBody.loadUint(32); 
 
     if (op == OP_WITHDRAW) {
-        // checkOwner(senderAddress);
+        checkOwner(senderAddress);
         
         val msgBody = beginCell()
             .storeUint(OP_PAYOUT, 32)
